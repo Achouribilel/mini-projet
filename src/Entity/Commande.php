@@ -57,10 +57,10 @@ class Commande
     private $client;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Plat",inversedBy="commande")
+     * @ORM\OneToMany (targetEntity="App\Entity\CommandePlats",mappedBy="commande")
      * @JoinTable(name="commande_plats")
      */
-    private $plats;
+    private $commandeplats;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Livreur",inversedBy="commande")
@@ -196,6 +196,23 @@ class Commande
     {
         $this->livreur = $livreur;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCommandeplats()
+    {
+        return $this->commandeplats;
+    }
+
+    /**
+     * @param mixed $commandeplats
+     */
+    public function setCommandeplats($commandeplats): void
+    {
+        $this->commandeplats = $commandeplats;
+    }
+
 
 
 

@@ -902,7 +902,7 @@ SELECT|sys.sys_config
       <RefTableName>livreur</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="266" parent="236" name="commande_id">
+    <column id="266" parent="236" name="quantite">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -910,206 +910,212 @@ SELECT|sys.sys_config
     <column id="267" parent="236" name="plat_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <index id="268" parent="236" name="IDX_BC22BDC982EA2E54">
-      <ColNames>commande_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="269" parent="236" name="IDX_BC22BDC9D73DB560">
+    <column id="268" parent="236" name="id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="269" parent="236" name="comande_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="270" parent="236" name="IDX_BC22BDC9D73DB560">
       <ColNames>plat_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="270" parent="236" name="PRIMARY">
+    <index id="271" parent="236" name="IDX_BC22BDC9F71BCFFF">
+      <ColNames>comande_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="272" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>commande_id
-plat_id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="271" parent="236" name="FK_BC22BDC982EA2E54">
-      <ColNames>commande_id</ColNames>
-      <RefTableName>commande</RefTableName>
-      <RefColNames>id</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <foreign-key id="272" parent="236" name="FK_BC22BDC9D73DB560">
+    <foreign-key id="273" parent="236" name="FK_BC22BDC9D73DB560">
       <ColNames>plat_id</ColNames>
       <RefTableName>plat</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="273" parent="237" name="version">
+    <foreign-key id="274" parent="236" name="FK_BC22BDC9F71BCFFF">
+      <ColNames>comande_id</ColNames>
+      <RefTableName>commande</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="275" parent="237" name="version">
       <Position>1</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="274" parent="237" name="executed_at">
+    <column id="276" parent="237" name="executed_at">
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <column id="275" parent="237" name="execution_time">
+    <column id="277" parent="237" name="execution_time">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <key id="276" parent="237" name="PRIMARY">
+    <key id="278" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="277" parent="238" name="id">
+    <column id="279" parent="238" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="278" parent="238" name="commande_id">
+    <column id="280" parent="238" name="commande_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="279" parent="238" name="code">
+    <column id="281" parent="238" name="code">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="280" parent="238" name="statut">
+    <column id="282" parent="238" name="statut">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="281" parent="238" name="montant_facture">
+    <column id="283" parent="238" name="montant_facture">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="282" parent="238" name="UNIQ_FE86641082EA2E54">
+    <index id="284" parent="238" name="UNIQ_FE86641082EA2E54">
       <ColNames>commande_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="283" parent="238" name="PRIMARY">
+    <key id="285" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="284" parent="238" name="UNIQ_FE86641082EA2E54">
+    <key id="286" parent="238" name="UNIQ_FE86641082EA2E54">
       <ColNames>commande_id</ColNames>
       <UnderlyingIndexName>UNIQ_FE86641082EA2E54</UnderlyingIndexName>
     </key>
-    <foreign-key id="285" parent="238" name="FK_FE86641082EA2E54">
+    <foreign-key id="287" parent="238" name="FK_FE86641082EA2E54">
       <ColNames>commande_id</ColNames>
       <RefTableName>commande</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="286" parent="239" name="id">
+    <column id="288" parent="239" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="287" parent="239" name="nom">
+    <column id="289" parent="239" name="nom">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="288" parent="239" name="prenom">
+    <column id="290" parent="239" name="prenom">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <key id="289" parent="239" name="PRIMARY">
+    <key id="291" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="290" parent="239" name="FK_EB7A4E6DBF396750">
+    <foreign-key id="292" parent="239" name="FK_EB7A4E6DBF396750">
       <ColNames>id</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="291" parent="240" name="id">
+    <column id="293" parent="240" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="292" parent="240" name="categorie_id">
+    <column id="294" parent="240" name="categorie_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="293" parent="240" name="nomplat">
+    <column id="295" parent="240" name="nomplat">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="294" parent="240" name="description">
+    <column id="296" parent="240" name="description">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="295" parent="240" name="code">
+    <column id="297" parent="240" name="code">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="296" parent="240" name="prix">
+    <column id="298" parent="240" name="prix">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="297" parent="240" name="IDX_2038A207BCF5E72D">
+    <index id="299" parent="240" name="IDX_2038A207BCF5E72D">
       <ColNames>categorie_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="298" parent="240" name="PRIMARY">
+    <key id="300" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="299" parent="240" name="FK_2038A207BCF5E72D">
+    <foreign-key id="301" parent="240" name="FK_2038A207BCF5E72D">
       <ColNames>categorie_id</ColNames>
       <RefTableName>categorie</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="300" parent="241" name="id">
+    <column id="302" parent="241" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="301" parent="241" name="email">
+    <column id="303" parent="241" name="email">
       <Position>2</Position>
       <DataType>varchar(180)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="302" parent="241" name="roles">
+    <column id="304" parent="241" name="roles">
       <Position>3</Position>
       <DataType>json|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="303" parent="241" name="password">
+    <column id="305" parent="241" name="password">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="304" parent="241" name="lastname">
+    <column id="306" parent="241" name="lastname">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="305" parent="241" name="firstname">
+    <column id="307" parent="241" name="firstname">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="306" parent="241" name="adresse">
+    <column id="308" parent="241" name="adresse">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="307" parent="241" name="discr">
+    <column id="309" parent="241" name="discr">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="308" parent="241" name="UNIQ_8D93D649E7927C74">
+    <index id="310" parent="241" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="309" parent="241" name="PRIMARY">
+    <key id="311" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="310" parent="241" name="UNIQ_8D93D649E7927C74">
+    <key id="312" parent="241" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
     </key>

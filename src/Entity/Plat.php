@@ -45,10 +45,10 @@ class Plat
     private $prix;
 
     /**
-     * @ORM\ManyToMany (targetEntity="App\Entity\Commande",mappedBy="plats")
+     * @ORM\OneToMany (targetEntity="App\Entity\CommandePlats",mappedBy="plat")
      *
      */
-    private $commande;
+    private $commandeplat;
 
     public function getId(): ?int
     {
@@ -124,7 +124,7 @@ class Plat
      */
     public function getCommande()
     {
-        return $this->commande;
+        return $this->commandeplat;
     }
 
     /**
@@ -132,8 +132,25 @@ class Plat
      */
     public function setCommande($commande): void
     {
-        $this->commande = $commande;
+        $this->commandeplat = $commande;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCommandeplat()
+    {
+        return $this->commandeplat;
+    }
+
+    /**
+     * @param mixed $commandeplat
+     */
+    public function setCommandeplat($commandeplat): void
+    {
+        $this->commandeplat = $commandeplat;
+    }
+
 
 
 }

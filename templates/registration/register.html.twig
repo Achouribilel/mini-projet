@@ -1,24 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
 
-{% block title %}Register{% endblock %}
 
-{% block body %}
-<br><br><br><br><br><br>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{asset('css/stle1.css')}}">
+    {% endblock %}
+
+
+</head>
+
+<body>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+<div class="login">
+
+    <h2 class="active"> sign up </h2>
+    <h2 class="nonactive">  <a href="{{ path('app_login') }}"> sign in </a> </h2>
+
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
-
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.lastname) }}
-        {{ form_row(registrationForm.firstname) }}
-        {{ form_row(registrationForm.adresse) }}
-         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
+    {{ form_row(registrationForm.email,{"attr":{"class":"text"}}) }}
+
+        <br>
+        <br>
+    {{ form_row(registrationForm.plainPassword,{"attr":{"class":"text"}}) }}
+
+
+        <br>
+
+        <br>
+    {{ form_row(registrationForm.lastname,{"attr":{"class":"text"}}) }}
+
+
+        <br>
+
+        <br>
+    {{ form_row(registrationForm.firstname,{"attr":{"class":"text"}}) }}
+
+
+        <br>
+
+        <br>
+    {{ form_row(registrationForm.adresse,{"attr":{"class":"text"}}) }}
+
+        <br>
+
+    {{ form_row(registrationForm.phone,{"attr":{"class":"text"}}) }}
+
+    <br>
+    {{ form_row(registrationForm.NumCarte,{"attr":{"class":"text"}}) }}
+
+    <br>
+
+    <button type="submit" class="signin">Register</button>
     {{ form_end(registrationForm) }}
-{% endblock %}
+
+</div>
+
+</body>
+
+
+
+
+</html>
+
+
+
