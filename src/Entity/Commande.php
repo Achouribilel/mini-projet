@@ -54,6 +54,7 @@ class Commande
      * @ORM\ManyToOne(targetEntity="App\Entity\Client",inversedBy="commandes")
      * @JoinColumn(name="client_id", referencedColumnName="id")
      */
+
     private $client;
 
     /**
