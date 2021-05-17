@@ -63,6 +63,8 @@ class Categorie
         $this->plats = $plats;
     }
 
-
+    public function __toString() {
+        return $this->libelle;
+    }
 
 }

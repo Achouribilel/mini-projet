@@ -12,6 +12,7 @@ class PlatType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('categorie')
             ->add('nomplat')
             ->add('description')
             ->add('code')

@@ -3,12 +3,14 @@
 {% block title %}Plat index{% endblock %}
 
 {% block body %}
+    <br><br><br><br>
     <h1>Plat index</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+
+                <th>Catégorie</th>
                 <th>Nomplat</th>
                 <th>Description</th>
                 <th>Code</th>
@@ -19,7 +21,8 @@
         <tbody>
         {% for plat in plats %}
             <tr>
-                <td>{{ plat.id }}</td>
+
+                <td>{{ plat.categorie }}</td>
                 <td>{{ plat.nomplat }}</td>
                 <td>{{ plat.description }}</td>
                 <td>{{ plat.code }}</td>
