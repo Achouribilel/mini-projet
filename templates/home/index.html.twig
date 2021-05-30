@@ -10,12 +10,186 @@
 	<br>
 	<br>
 	<br>
-
-	<!-- Start slides -->
-
-	<!-- End slides -->
-
 	<!-- Start About -->
+	{% if app.user %}
+
+
+
+
+
+
+
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<img src="{{asset('images/about-img.jpg')}}" alt="" class="img-fluid">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
+					<div class="inner-column">
+						<h1> <span>BIENVENU CHEZ RESTAURANT WAKKALNI</span></h1>
+						<h4>Petite Histoire</h4>
+						<p> Le restaurant connu sous le nom "WAKALNI" apparaît autour du XVIII siècle en France ,c'était à l'époque un bouillon de viande revigorant consumé pour retrouver des forces , il a fallu attendre la Révolution française puis l’industrialisation pour voir naître et se développer les établissements culinaires tels que nous les connaissons aujourd’hui , il faut savoir que le restaurant moderne n’est pas une création de toutes pièces puis l’activité de restauration hors de la sphère privée existe depuis des millénaires puis c'est en 1765 Mathurin Roze de Chantoiseau ouvre le premier restaurant moderne dans le quartier du Louvre à Paris pour proposer un service révolutionnaire c'est-à-dire des tables individuelles et des plats à choisir sur un menu , les clients manger à l'extérieur c'était une activité réservée aux voyageurs </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+
+	<!-- Start QT -->
+	<div class="qt-box qt-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto text-left">
+					<p class="lead ">
+						"Si vous n'êtes pas celui qui cuisine, restez à l'écart et félicitez le chef."
+					</p>
+					<span class="lead">Michael Strahan</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End QT -->
+
+	<!-- Start Menu -->
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2> Menu Special</h2>
+						<p>l'extraordinaire se trouve sur nos menus</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="special-menu text-center">
+						<div class="button-group filter-button-group">
+							<button class="active" data-filter="*">Tout</button>
+							<button data-filter=".drinks">Boissons</button>
+							<button data-filter=".lunch">Déjeuner</button>
+							<button data-filter=".dinner">Dîner</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row special-list">
+				<a href="{{ path('commande_index') }}">
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="images/img-01.jpg" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Boissons Special 1</h4>
+							<p>Whiskey cocktail	</p>
+							<h5> 15DT</h5>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="{{ path('commande_index') }}">
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="images/img-02.jpg" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Boissons Special 2</h4>
+							<p>Mojito Fraise</p>
+							<h5>8DT</h5>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="{{ path('commande_index') }}">
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="images/img-03.jpg" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Boissons Special 3</h4>
+							<p>Biére Belge</p>
+							<h5>7DT</h5>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="{{ path('commande_index') }}">
+				<div class="col-lg-4 col-md-6 special-grid lunch">
+					<div class="gallery-single fix">
+						<img src="images/img-04.jpg" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Déjeuner 1</h4>
+							<p>Burger + Frites</p>
+							<h5>13DT</h5>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="{{ path('commande_index') }}">
+				<div class="col-lg-4 col-md-6 special-grid lunch">
+					<div class="gallery-single fix">
+						<img src="images/img-05.jpg" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Déjeuner 2</h4>
+							<p>Salade césar</p>
+							<h5>10DT</h5>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="{{ path('commande_index') }}">
+				<div class="col-lg-4 col-md-6 special-grid lunch">
+					<div class="gallery-single fix">
+						<img src="images/img-06.jpg" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Déjeuner 3</h4>
+							<p>Saumon Fumé</p>
+							<h5>20DT</h5>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="{{ path('commande_index') }}">
+				<div class="col-lg-4 col-md-6 special-grid dinner">
+					<div class="gallery-single fix">
+						<img src="images/img-07.jpg" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Diner 1</h4>
+							<p>Plat Viande chevaline au miso et au yuzu</p>
+							<h5>25DT</h5>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="{{ path('commande_index') }}">
+				<div class="col-lg-4 col-md-6 special-grid dinner">
+					<div class="gallery-single fix">
+						<img src="images/img-08.jpg" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Diner 2</h4>
+							<p>Miso Soup with Greens and Tofu</p>
+							<h5>23DT</h5>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="{{ path('commande_index') }}">
+				<div class="col-lg-4 col-md-6 special-grid dinner">
+					<div class="gallery-single fix">
+						<img src="images/img-09.jpg" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Diner 3</h4>
+							<p>Rôti à la poêle</p>
+							<h5>25DT</h5>
+						</div>
+					</div>
+				</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	{% else %}
 
 
 
@@ -103,9 +277,9 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="col-lg-4 col-md-6 special-grid drinks">
 					<div class="gallery-single fix">
+						<a>
 						<img src="images/img-03.jpg" class="img-fluid" alt="Image">
 						<div class="why-text">
 							<h4>Boissons Special 3</h4>
@@ -184,6 +358,8 @@
 			</div>
 		</div>
 	</div>
+
+	{% endif %}
 	<!-- End Menu -->
 
 	<!-- Start Gallery -->

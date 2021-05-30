@@ -1,44 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Commande index{% endblock %}
+{% block title %}Listes des Plats{% endblock %}
 
 {% block body %}
-    <br><br>   <br><br>
-    <h1>Commande index</h1>
+    <br><br><br><br>
+    <h1>Listes des Plats</h1>
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Desciption</th>
-                <th>Qte</th>
-                <th>Montant</th>
-                <th>Statut</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+
+            <th>Catégorie</th>
+            <th>Nomplat</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
-        {% for commande in commandes %}
+        {% for plat in plats %}
             <tr>
-                <td>{{ commande.id }}</td>
-                <td>{{ commande.code }}</td>
-                <td>{{ commande.desciption }}</td>
-                <td>{{ commande.qte }}</td>
-                <td>{{ commande.montant }}</td>
-                <td>{{ commande.statut }}</td>
+
+                <td>{{ plat.categorie }}</td>
+                <td>{{ plat.nomplat }}</td>
+                <td>{{ plat.description }}</td>
+                <td>{{ plat.prix }}</td>
                 <td>
-                    <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
-                    <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
+                    <a href="{{ path('plat_show', {'id': plat.id}) }}">Ajouter Au Panier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="6">Liste Vide</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('commande_new') }}">Create new</a>
 {% endblock %}

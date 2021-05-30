@@ -96,7 +96,7 @@
 		<header class="top-navbar">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="container">
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="{{ path('home') }}">
 						<img src="images/wakalni.png" alt="" />
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,7 +107,7 @@
 							<li class="nav-item"><a class="nav-link" href="{{ path('home') }}">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="{{ path('categorie_index') }}">Catégorie</a></li>
 							<li class="nav-item"><a class="nav-link" href="{{ path('plat_index') }}">Plat</a></li>
-							<li class="nav-item"><a class="nav-link" href="">Panier</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ path('panier') }}">Panier</a></li>
 							<li class="nav-item"><a class="nav-link" href="">{{ app.user.username }} </a></li>
 							<li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}"> Logout</a></li>
 						</ul>
@@ -131,7 +131,7 @@
 						<li class="nav-item"><a class="nav-link" href="{{ path('home') }}">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="{{ path('categorie_index') }}">Catégorie</a></li>
 						<li class="nav-item"><a class="nav-link" href="{{ path('plat_index') }}">Plat</a></li>
-						<li class="nav-item"><a class="nav-link" href="">Panier</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ path('panier') }}">Panier</a></li>
 						<li class="nav-item"><a class="nav-link" href="{{ path('app_login') }}">Sign In</a></li>
 						<li class="nav-item"><a class="nav-link" href="{{ path('app_register') }}">Sign Up</a></li>
 					</ul>
