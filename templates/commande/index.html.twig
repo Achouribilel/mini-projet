@@ -26,7 +26,7 @@
                 <td>{{ plat.description }}</td>
                 <td>{{ plat.prix }}</td>
                 <td>
-                    <a href="{{ path('plat_show', {'id': plat.id}) }}">Ajouter Au Panier</a>
+                    <a href="{{path('ajoutplat',{'id':plat.id,'id_user':1})}}">Ajouter Au Panier</a>
                 </td>
             </tr>
         {% else %}
